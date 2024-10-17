@@ -1,0 +1,68 @@
+## 1. INNER JOIN
+**Scenario:**
+You have two tables: Customers and Orders.<br>
+You want to get a list of customers who have placed orders.
+
+**Query:**
+SELECT Customers.CustomerName, Orders.Product<br>
+FROM Customers<br>
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+
+## 2. LEFT JOIN (LEFT OUTER JOIN)
+**Scenario:** 
+You want to get all customers, even those who haven’t placed any orders.
+
+**Query:**
+SELECT Customers.CustomerName, Orders.Product<br>
+FROM Customers<br>
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+## 3. RIGHT JOIN (RIGHT OUTER JOIN)
+**Scenario:** 
+You want to get all orders, even if some customers don’t have an entry.
+
+**Query:**
+SELECT Customers.CustomerName, Orders.Product
+FROM Customers
+RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+## 4. CROSS JOIN
+**Scenario:** 
+You want to pair every customer with every product for marketing purposes.
+
+**Query:**
+SELECT Customers.CustomerName, Orders.Product
+FROM Customers
+CROSS JOIN Orders;
+
+## 5. SELF JOIN
+
+**Scenario:** 
+You have an Employees table where each employee reports to another employee, and you want to find out who reports to whom.
+
+
+**Query:**
+
+SELECT e1.EmployeeName AS Employee, e2.EmployeeName AS Manager
+FROM Employees e1
+LEFT JOIN Employees e2 ON e1.ManagerID = e2.EmployeeID;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
